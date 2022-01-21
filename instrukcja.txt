@@ -1,0 +1,30 @@
+Jak tworzyć własne mapy: 
+
+W pliku "default.txt" każda linijka to jedno pole, pól musi być 40, a pierwsza linijka to zawsze powinno być pole start.
+
+Jak budować pole miasta: 
+1) nazwa miasta (nie może być event lub start)
+2) cena (liczba całkowita)
+3) ilość, która zapłaci gracz ,  który stanie na polu jeżeli miasto ma poziom 0 (liczba całkowita)
+4) -||- poziom 1 (liczba całkowita) 
+5) -||- poziom 2 (liczba całkowita)
+6) -||- poziom 3 (liczba całkowita)
+7) cena ulepszenia (liczba całkowita)
+8) monopol, do którego należy miasto np (sklep, Europa, skl, a)
+
+Każdą instrukcje trzeba zakończyć spacja!!!!!!!!!!!!!!!
+, po której można napisać cokolwiek w pliku default jest to poprostu liczba linijki 
+
+Jak budować pole jakiegoś wydarzenia: 
+1)wpisujemy "event"
+2)nazwa pola 
+3)funkcja
+Lista funkcji: 
+
+Bills100,bills200,hospital,jail,random,add150,lottery,birthday50
+
+
+Uwaga pól startu może być dowolna ilość ale pieniądze ze przekroczenie startu dostaje się tylko jeżeli przekroczy się pole które w pliku występuje w linijce pierwszej , tam tez każdy gracz zaczyna rozgrywkę.
+
+
+Uwaga2. Informacje należy wpisywać bardzo uważnie gdyż błąd skutkuje nieodpalaniem gry.
