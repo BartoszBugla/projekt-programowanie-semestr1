@@ -2,7 +2,7 @@
 // Created by bartosz bugla on 02/01/2022.
 //
 #include<fstream>
-#include "../struct.h"
+#include "../headers/struct.h"
 #include <string>
 #include <iostream>
 

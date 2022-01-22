@@ -4,7 +4,7 @@
 #include <ctime>
 #include <thread>
 #include <chrono>
-#include "../struct.h"
+#include "../headers/struct.h"
 using namespace std;
 void clearScreen(){
     //if dev

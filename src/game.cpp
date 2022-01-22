@@ -1,9 +1,9 @@
-#include "../struct.h"
+#include "../headers/struct.h"
 #include <iostream>
-#include "../events.h"
-#include "../board.h"
-#include "../functions.h"
-#include "../saveload.h"
+#include "../headers/events.h"
+#include "../headers/board.h"
+#include "../headers/functions.h"
+#include "../headers/saveload.h"
 //opis znajduje sie przy samej deklaracji
 void dice_roll(int);
 void show_list(int);

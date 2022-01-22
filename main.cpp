@@ -1,9 +1,9 @@
 #include <iostream>
-#include "functions.h"
-#include "struct.h"
-#include "board.h"
-#include "game.h"
-#include "saveload.h"
+#include "headers/functions.h"
+#include "headers/struct.h"
+#include "headers/board.h"
+#include "headers/game.h"
+#include "headers/saveload.h"
 using namespace std;
 
 int askForNumber(){

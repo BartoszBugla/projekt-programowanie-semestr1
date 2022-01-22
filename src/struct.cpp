@@ -1,5 +1,5 @@
 
-#include "../struct.h"
+#include "../headers/struct.h"
 Player* players = nullptr;
 Tile* board = nullptr;
 int playerNumber = 0 ;

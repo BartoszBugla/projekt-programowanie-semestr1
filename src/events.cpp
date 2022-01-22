@@ -2,9 +2,9 @@
 // Created by bartosz bugla on 23/12/2021.
 //
 
-#include "../struct.h"
-#include "../board.h"
-#include "../functions.h"
+#include "../headers/struct.h"
+#include "../headers/board.h"
+#include "../headers/functions.h"
 #include <iostream>
 typedef void (*IntFunctionWithOneParameter) (int player_id);
 void trigger_event(int currentPlayer, string event="random");

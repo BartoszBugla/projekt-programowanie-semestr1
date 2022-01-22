@@ -1,6 +1,7 @@
 Jak tworzyć własne mapy: 
 
-W pliku "default.txt" każda linijka to jedno pole, pól musi być 40, a pierwsza linijka to zawsze powinno być pole start.
+W pliku "default.txt" każda linijka to jedno pole, pól musi być 40, 
+a pierwsza linijka to zawsze powinno być pole start.
 
 Jak budować pole miasta: 
 1) nazwa miasta (nie może być event lub start)
@@ -24,7 +25,8 @@ Lista funkcji:
 Bills100,bills200,hospital,jail,random,add150,lottery,birthday50
 
 
-Uwaga pól startu może być dowolna ilość ale pieniądze ze przekroczenie startu dostaje się tylko jeżeli przekroczy się pole które w pliku występuje w linijce pierwszej , tam tez każdy gracz zaczyna rozgrywkę.
+Uwaga pól startu może być dowolna ilość ale pieniądze ze przekroczenie startu dostaje się tylko 
+jeżeli przekroczy się pole które w pliku występuje w linijce pierwszej , tam tez każdy gracz zaczyna rozgrywkę.
 
 
 Uwaga2. Informacje należy wpisywać bardzo uważnie gdyż błąd skutkuje nieodpalaniem gry.

@@ -1,7 +1,7 @@
 
-#include  "../struct.h"
+#include  "../headers/struct.h"
 #include <iostream>
-#include "../functions.h"
+#include "../headers/functions.h"
 #include <fstream>
 
 TileInfo* tilesInfoArray = new TileInfo[boardSize];
