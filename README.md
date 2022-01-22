@@ -7,20 +7,20 @@ Do tych mechanik należą m.in.:
 * kupno, sprzedaż, ulepszenie pola
 * mechanika budżetu
 * warunki zwycięstwa
-* zdarzenia losowe oraz zdarzenia stale(wiezeinie , szpital itd.)
+* zdarzenia losowe oraz zdarzenia stale (więzienie , szpital itd.)
 * mechanika monopolu  
 
 Dodatkowo gra miała zawierać: 
 * wczytywanie planszy z pliku 
-* zapis odczyt gry 
+* zapis i odczyt gry 
 * wybór ilośći graczy 
 
-## Najwazniejsze funkcje kodu 
-Wszystkie funkcje opisane sa w kodzie.
+## Najważniejsze funkcje kodu 
+Wszystkie funkcje opisane są w kodzie. Lista kilku najciekawszych.
 
 ### OptionMenu (functions)
 
-Funckja odpowiada za generowanie prostego menu opcji 
+Funkcja odpowiada za generowanie prostego menu opcji 
 ```
 $ struct Option{
 $   string message = " ";
@@ -32,45 +32,45 @@ $
 $ int option_menu ( Option opt[], int size , const function<void()>  init = [](){});
 $
 ```
-init  funkcja, która dzieje sie przed wyświetleniem całego menu ( w moim projekcie stosowana to wyswietlenia większości menu wyboru) 
-Option to tablica struktur opcji podajemy tam : 
+init  funkcja, która dzieje sie przed wyświetleniem całego menu ( w moim projekcie stosowana do czyszczenia ekranu i generowania nowego ekranu planszy ) 
+Option to tablica struktur opcji podajemy tam: 
 * wiadomość, która się ma wyświetlić 
-* string , który należy wpisać, aby włączyć podaną funcje podaną 
-* f to podana funkcja, która ma się stać po wisaniu stringa "key" 
-* cont - czy po wpisaniu danej opcji mamy wyjść z menu (po rzucie kostką wychdozimy z menu, natomiast po wybraniu opcji pokaz liste miast nie konczymy pętli) 
+* string, który należy wpisać, aby włączyć funkcję
+* f to podana funkcja, która ma się stać po wpisaniu stringa "key" 
+* cont - czy po wpisaniu danej opcji mamy wyjść z menu (po rzucie kostką wychdozimy z menu, natomiast po wybraniu opcji pokaż listę, nie kończymy pętli) 
 
 ### Convert (functions) 
-Zamienia nam linijke z pliku na strukture. 
+Zamienia nam linijkę z pliku na strukturę. 
 
 ### LoadFromFile (board) 
-Wczytuje linijki z pliku default.txt 
+Wczytuje po koleji linijki z pliku default.txt. 
 
 ### Plik saveload.cpp
-Save -  zapisują binarnie do pliku dane o strukturze board , players i informacje o aktualnej turze. 
+Save - zapisują binarnie do pliku dane o strukturze board, players i informacje o aktualnej turze. 
 Load - wczytuje i zapisuje dane do globalnych zmiennych. 
 
 ### Plik game.cpp
-Zawiera wszystkie większośc funkcji odpowiadzlanych za podstawowwe mechaniki. 
+Zawiera wszystkie większość funkcji odpowiadzialnych za podstawowe mechaniki. 
 
-Za każdą petlą po koleji: 
-
-Sprawdzamy:
-* Liczbe graczy, którzy posiadają więcej niż 0$, jeżeli jest tylko jeden gracz to kończymy grę
-* Czy gracz, którego tura ma więcej niż 0$
+W każdym obiegu petli sprawdzamy:
+* Liczbę graczy, którzy posiadają więcej niż 0$, jeżeli jest tylko jeden gracz to kończymy grę
+* Czy gracz, którego jest tura ma więcej niż 0$
 * Czy gracz jest w więzieniu
 * Czy dany gracz ma jakiś monopol
 * Czy dany gracz ulepszył już pole 
-* czy dany gracz może ulepszyć jakieś pole (warunkowane na podstawie powyzszych kroków) 
+* czy dany gracz może ulepszyć jakieś pole (warunkowane na podstawie powyższych kroków) 
 
 Każdą turę kończymy rzutem kostką, pózniej następuje ruch pionka. 
-Później w zaleności od na jakim polu staniemy dzieje się funckja, możliwości:
+Możliwości po rzucie kostki:
 * puste, nie zakupione pole do kupna 
 * kupione pole przez innego gracza 
 * pole eventu 
-* pole startu (nic sie nie dzieje) 
+* pole startu (nic się nie dzieje) 
 
 ### trigger_event 
-Włącza funkje podaną jako string. Opiera sie na prostym switchu.
+
+Włącza funkcje na podstowie stringu. Opiera sie na prostym switchu.
+
 Jeżeli podamy parametr "random" , wtedy losuje się jedna z kilku funkcji podanych w tablicy.  
 
 
