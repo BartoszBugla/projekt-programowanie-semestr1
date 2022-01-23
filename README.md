@@ -72,7 +72,7 @@ Load - wczytuje i zapisuje dane do globalnych zmiennych.
 Po włączeniu gry dostajemy menu, w którym można stworzyć nową grę lub wczytać zapisaną. Po wpisaniu ilości graczy oraz wyboru nazw graczy otwiera się menu gracza. Widzimy nas stan gry oraz możliwe akcje. Możemy sprawdzić opis naszych posiadłości, sprzedać i ulepszyć (jeżeli jest taka możliwości). Ulepszyć można pole jeżeli mamy na nim monopol, czyli mamy wszystkie pola należące do tej samej kategorii.Program poinformuje nas, jeżeli jest mamy jakikolwiek monopol. W bazowej wersji mapy pola należące do tej samej kategorii są oddzielone polami zdarzeń (pomarańczowe) oraz polami akcji ( w cudzysłowiu ) . Jeżeli gracz stworzy własną mapę, może się to różnić.
 Przykład Monopolu:
 
-![Screenshot](Screenshot 2022-01-23 at 13.15.16.png)
+![Screenshot](screenshots/screen.png)
 
 Możliwości po rzucie kostki:
 
