@@ -8,5 +8,5 @@
 void save();
 //funkcja wczytuje dane z pliku i równoczesnie inicjalizuje
 
-void load();
+bool load();
 #endif //MONOPOLYV2_SAVELOAD_H

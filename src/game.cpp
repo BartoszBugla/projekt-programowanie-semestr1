@@ -17,7 +17,6 @@ bool check_if_any_mono(int player_id);
 //czy ulepszono juz pole
 bool upgradedTile = 0 ;
 void game(){
-
     while(true){
         if(turn == 50) break;
         int currentPlayer = turn % playerNumber;

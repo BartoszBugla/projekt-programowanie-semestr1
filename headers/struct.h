@@ -18,7 +18,7 @@ enum class tile_type{
 // struktura pola
 struct Tile{
     string name;
-    tile_type  type= tile_type::normal;
+    tile_type type= tile_type::normal;
     int price = 0;
     int level= 0 ;
     int cost[4];
@@ -38,14 +38,14 @@ struct Player{
     char symbol;
     int jail;
 };
-//struktura pomaga w inicjalizacji gry ( nie optymalne )
+//struktura pomaga w inicjalizacji gry
 struct TileInfo{
     string name;
     tile_type type= tile_type::normal;
     int price = 0;
     int upgradeCost = 0;
     int cost[4]{};
-    string monopoly;
+    string monopoly="";
     string eventName = "";
 
 };
@@ -55,9 +55,9 @@ struct TileInfo{
 //f : funkcja któ®a sie stanie po wpisaniu frazy
 //cont : czy nalezy kontynuować to menu, czy go opuścić ( lekko zbugowane )
 struct Option{
-    string message = " ";
-    string key = " " ;
-    const function<void()> f = [](){ cout<<"You forgot to enter a callback :( "<<endl;};
+    string message;
+    string key;
+    const function<void()> f = [](){};
     bool cont = false;
 };
 // Globalna tablica graczy

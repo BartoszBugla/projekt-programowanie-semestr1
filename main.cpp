@@ -37,7 +37,16 @@ void initGame(){
     game();
 }
 void loadGame(){
-    load();
+    bool loaded = load();
+    if(!loaded){
+    cout<< "Z jakiegoś powodu nie można otworzyć pliku. Prawodopnie plik nie istnieje"<<endl;
+
+        Option options[]{{"1.Rozpocznij gre." , "1" ,initGame, false },
+                         {"2.Wyjdz" ,"2",[](){},false },
+                         {"3.Wczytaj gre" , "3" , loadGame , true}
+        };
+        option_menu(options,3,clearScreen);
+    } ;
     cout << "Load success"<<endl;
     game();
 
@@ -49,7 +58,7 @@ int main(int argc,char* argv[]) {
 
     cout << "\033[1;31m" <<"Zalecane jest granie na pelnym ekranie" <<"\033[0m\n" <<endl;
     Option options[]{{"1.Rozpocznij gre." , "1" ,initGame, false },
-                      {"2.Wyjdz" ,"2",[](){},true },
+                      {"2.Wyjdz" ,"2",[](){},false },
                       {"3.Wczytaj gre" , "3" , loadGame , true}
     };
     option_menu(options,3);

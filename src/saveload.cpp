@@ -5,26 +5,8 @@
 #include "../headers/struct.h"
 #include <string>
 #include <iostream>
-
-struct Save{
-
-    int turn;
-    int playerNumber;
-    int boardSize;
-
-    Tile* board;
-    Player* players ;
-};
 using namespace std;
 void save(){
-    Save newSave;
-    newSave.board = board;
-    newSave.players = players;
-    newSave.turn = turn;
-    newSave.playerNumber = playerNumber;
-    newSave.boardSize = boardSize ;
-    cout << newSave.board[0].name<<endl;
-    cout <<sizeof newSave<<endl;
     ofstream file;
 
     file.open(path+"/testsave.bin", ios::binary);
@@ -40,7 +22,7 @@ void save(){
     }
     file.close();
 }
-void load(){
+bool load(){
     ifstream file;
 
     file.open(path+"/testsave.bin", ios_base::binary);
@@ -53,8 +35,8 @@ void load(){
         file.read((char*)(&turn),sizeof(int));
         file.read((char*)(&playerNumber),sizeof(int));
         file.close() ;
-
+        return true;
     }else {
-        cerr<<"Z jakiegos powodu nie mozna otworzyc pliku"<<endl;
+        return false;
     }
 }

@@ -12,34 +12,20 @@ void go_to_jail(int player_id){
     cout << "Niestey idziesz do więzienia :( "<<endl;
     players[player_id].jail = 3 ;
     players[player_id].position = 31 ;
-    string choice;
     cout << "Ale możesz zapłacić 200$, aby z niego wyjść"<<endl;
-    cout <<"1. Zostań w więzieniu"<<endl;
-    cout <<"2. Zaplać aby wyjść"<<endl;
-    while(true){
-        cout <<"Twoj wybor:";
-        cin >> choice;
-        if(choice == "1"){
-            break;
-        }else if(choice == "2"){
-            if(  players[player_id].money > 200){
-                players[player_id].money -=200;
-                players[player_id].jail = 0;
-                cout << "zaplaciles 200$ aby wyjsc"<<endl;
-                cout << "Twoj stan konta teraz:"<< players[player_id].money<<endl;
-                break;
-
-            }
-            else{
-                cout <<"Niestety nie stac cie. Kolejne 3 tury spędzisz w więzieniu."<<endl;
-                break;
-            }
-        }else{
-            cout << "niestety nie znam takiej komendy"<<endl;
-            continue;
-        }
-    }
-
+    Option options[]={{"1. Zostań w więzieniu","1",[](){},},
+                {"2. Zaplać aby wyjść","2",[&player_id]() {
+                            if (players[player_id].money > 200) {
+                                players[player_id].money -= 200;
+                                players[player_id].jail = 0;
+                                cout << "zaplaciles 200$ aby wyjsc" << endl;
+                                cout << "Twoj stan konta teraz:" << players[player_id].money << endl;
+                            }else {
+                                cout <<"Niestety nie stac cie. Kolejne 3 tury spędzisz w więzieniu."<<endl;
+                            }
+                        }
+        }};
+        option_menu(options , 2 ,clearScreen );
 }
 void bills200(int player_id){
     cout<<"Niestety musisz zaplacic podatek w wysokosci 200$"<<endl;

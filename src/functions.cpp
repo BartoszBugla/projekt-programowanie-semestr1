@@ -7,15 +7,10 @@
 #include "../headers/struct.h"
 using namespace std;
 void clearScreen(){
-    //if dev
-    //cout << string(50, '\n');
-#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
-    system("cls");
-#elif defined(_POSIX_VERSION)
+//wersja windows
+//system("cls);
+//wesja mac linux
     system("clear");
-#endif
-    system("clear");
-
 }
 mt19937 generator(time(nullptr));
 
@@ -71,14 +66,11 @@ void input_to_continue(){
     cout << endl << "Wpisz cokolwiek aby kontunowac...";
     cin >> a;
 }
-void initFun(){
-
-}
 int option_menu(Option opt[] , int size , const function<void()> initF = [](){}){
     //usunac spacje
     string choice;
     while(true){
-        choice = -1;
+        choice = "";
         initF();
         for (int i = 0; i < size; ++i) {
             cout << opt[i].message<<endl;
